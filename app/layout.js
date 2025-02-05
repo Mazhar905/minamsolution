@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
+import Nav from "./component/layout/nav";
+import Footer from "./component/layout/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,11 +21,56 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="Free HTML Templates" />
+        <meta name="description" content="Free HTML Templates" />
+        <title>Startup - Startup Website Template</title>
+        <link rel="icon" href="/img/favicon.ico" />
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+          rel="stylesheet"
+        />
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+          rel="stylesheet"
+        />
+        <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+        <link href="/lib/animate/animate.min.css" rel="stylesheet" />
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/css/style.css" rel="stylesheet" />
+      </Head>
+      <body>
+        <Nav />
         {children}
+
+        {/* JavaScript Libraries */}
+        {/* <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/lib/wow/wow.min.js"></script>
+        <script src="/lib/easing/easing.min.js"></script>
+        <script src="/lib/waypoints/waypoints.min.js"></script>
+        <script src="/lib/counterup/counterup.min.js"></script>
+        <script src="/lib/owlcarousel/owl.carousel.min.js"></script> */}
+
+        {/* Template JavaScript */}
+        {/* <script src="/js/main.js"></script> */}
+        <Footer />
       </body>
     </html>
   );
